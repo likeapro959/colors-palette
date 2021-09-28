@@ -20,5 +20,4 @@ with open(HTML_FILE, "w") as f_html:
 
 with open(HTML_FILE, "r") as f_res:
 	res = f_res.read()
-print(res)
 
