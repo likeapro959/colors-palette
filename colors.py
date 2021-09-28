@@ -18,6 +18,3 @@ html = j2_template.render(colors=data)
 with open(HTML_FILE, "w") as f_html:
 	f_html.write(html)
 
-with open(HTML_FILE, "r") as f_res:
-	res = f_res.read()
-
