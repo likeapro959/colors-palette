@@ -1,15 +1,24 @@
 from jinja2 import Template
 
-template = """<h1>Colors Palette</h1>
-<ul>
-{% for color in colors %}
-  <li>{{ color  }}</li>
-{% endfor %}
-</ul>
-"""
+TEMPLATE_FILE = "template.html"
+DATA_FILE = "colors.txt"
+HTML_FILE = "colors.html"
 
-data = ["#2A9D8F", "#E9C46A", "#FFFFFF"]
+with open(TEMPLATE_FILE, "r") as f_template:
+	template = f_template.read()
+
+with open(DATA_FILE, "r") as f_data:
+	data = [line.rstrip('\n') for line in f_data]
+
 
 j2_template = Template(template)
 html = j2_template.render(colors=data)
-print(html)
+
+
+with open(HTML_FILE, "w") as f_html:
+	f_html.write(html)
+
+with open(HTML_FILE, "r") as f_res:
+	res = f_res.read()
+print(res)
+
