@@ -1,6 +1,16 @@
 <h1>Colors Palette</h1>
-<ul>
-{% for color in colors %}
-  <li>{{ color  }}</li>
-{% endfor %}
-</ul>
+
+<table>
+	<thead>
+		<th>Color Code</th>
+                <th>Color</th>
+        </thead>
+	<tbody>
+	{% for color in colors %}
+ 		<tr>
+			<td>{{ color }}</td>
+			<td bgcolor = "{{ color }}"></td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
